@@ -1,104 +1,41 @@
 import React from "react";
 
 const Skills = () => {
+  const skills = [
+    { name: "MongoDB", color: "text-green-500", url: "https://www.mongodb.com/" },
+    { name: "Express", color: "text-gray-400", url: "https://expressjs.com/" },
+    { name: "React", color: "text-blue-400", url: "https://reactjs.org/" },
+    { name: "Node.js", color: "text-green-400", url: "https://nodejs.org/" },
+    { name: "HTML", color: "text-orange-500", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    { name: "CSS", color: "text-blue-500", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { name: "JavaScript", color: "text-yellow-400", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "Tailwind", color: "text-cyan-400", url: "https://tailwindcss.com/" },
+    { name: "Bootstrap", color: "text-purple-500", url: "https://getbootstrap.com/" },
+  ];
+
   return (
-    <>
-        <div className="pb-15 ps-2 bg-gray-500">
-          <h1 className="text-4xl py-2 bg-gradient-to-r from-yellow-400 via-green-500 to-blue-500 text-transparent bg-clip-text">
-            <h1 >Arun | Full Stack Developer (MERN)</h1>
-          </h1>
+    <div className="bg-gray-800 py-16 px-4">
+      <h1 className="text-4xl font-bold text-white pb-4 border-b-2  border-amber-500 mb-8">
+        Skills
+      </h1>
 
-          <h2 className="text-3xl py-2 border-b-2 p-4">My Stack:</h2>
-
-       <div className="flex">
-           <h2 className="text-2xl py-4 flex gap-3 flex-wrap font-semibold text-white  px-4 rounded-md   w-fit">
-            <span className="text-black text-4xl">MERN</span>
+      <div className="mb-12">
+        <h2 className="text-2xl font-semibold text-amber-400 mb-6">My Tech Stack</h2>
+        <div className="flex flex-wrap gap-4">
+          {skills.map((skill, index) => (
             <a
-              href="https://www.mongodb.com/"
+              key={index}
+              href={skill.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-600  px-2 py-1 rounded-md hover:text-green-700 transition"
+              className={`${skill.color} bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors`}
             >
-              MongoDB
+              {skill.name}
             </a>
-            <a
-              href="https://expressjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 px-2 py-1 rounded-md hover:text-blue-700 transition"
-            >
-              Express
-            </a>
-            <a
-              href="https://reactjs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-red-600  px-2 py-1 rounded-md hover:text-red-700 transition"
-            >
-              React
-            </a>
-            <a
-              href="https://nodejs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-600 px-2 py-1 rounded-md hover:text-pink-700 transition"
-            >
-              Node.js
-            </a>
-          </h2>
-        
-
-          <h2 className="text-2xl py-4 flex gap-3 flex-wrap font-semibold text-white px-4 rounded-md  w-fit">
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-600  px-3 py-1 rounded-md hover:text-orange-700 transition"
-            >
-              HTML
-            </a>
-
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600  px-3 py-1 rounded-md hover:text-blue-700 transition"
-            >
-              CSS
-            </a>
-
-            <a
-              href="https://getbootstrap.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-600  px-3 py-1 rounded-md hover:text-purple-700 transition"
-            >
-              Bootstrap
-            </a>
-
-            <a
-              href="https://tailwindcss.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-600 px-3 py-1 rounded-md hover:text-cyan-700 transition"
-            >
-              Tailwind
-            </a>
-
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-yellow-500 px-3 py-1 rounded-md hover:text-yellow-600 transition"
-            >
-              JavaScript
-            </a>
-          </h2>
-       </div>
-
-         
+          ))}
         </div>
-    </>
+      </div>
+    </div>
   );
 };
 
