@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaCode, FaServer } from "react-icons/fa";
-import Arunimg from "../assets/Arunimg.jpg"; // Make sure this path is correct
+import Arunimg from "../assets/ArunImg.jpg"; 
 
 const Hero = () => {
   // Animation variants
