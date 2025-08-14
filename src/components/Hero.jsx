@@ -61,7 +61,7 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="flex flex-col md:flex-row justify-center items-center w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 px-6 py-12 md:py-0"
+      className="flex flex-col md:flex-row justify-center items-center w-full min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 px-6 pt-24 md:pt-0 pb-12"
     >
       {/* Left Side - Image with Animation */}
       <motion.div
@@ -82,38 +82,6 @@ const Hero = () => {
             className="w-full h-full object-cover"
           />
           
-          {/* Floating tech icons */}
-          <motion.div 
-            className="absolute top-8 left-8 text-amber-400"
-            animate={{
-              x: [0, 10, 0],
-              y: [0, -10, 0],
-              rotate: [0, 15, 0]
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
-          >
-            <FaCode className="text-xl" />
-          </motion.div>
-          <motion.div 
-            className="absolute bottom-8 right-8 text-amber-400"
-            animate={{
-              x: [0, -10, 0],
-              y: [0, 10, 0],
-              rotate: [0, -15, 0]
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: 1
-            }}
-          >
-            <FaServer className="text-xl" />
-          </motion.div>
         </motion.div>
       </motion.div>
 

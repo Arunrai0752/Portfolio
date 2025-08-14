@@ -255,12 +255,12 @@ const Projects = () => {
             background: rgba(30, 41, 59, 0.95);
             border-radius: 50%;
             box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-            width: 56px;
-            height: 56px;
+            width: 38px;
+            height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 1.4rem;
             border: 2px solid #f59e42;
             transition: background 0.3s, color 0.3s, transform 0.2s;
             z-index: 10;
@@ -275,7 +275,7 @@ const Projects = () => {
           }
           .custom-swiper-nav .swiper-button-next:after,
           .custom-swiper-nav .swiper-button-prev:after {
-            font-size: 2.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
           }
         `}</style>
