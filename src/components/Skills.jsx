@@ -6,17 +6,17 @@ import { DiJavascript, DiHtml5, DiCss3 } from "react-icons/di";
 
 const Skills = () => {
   const skills = [
-    { name: "MongoDB", icon: <SiMongodb className="text-green-500 text-3xl" /> },
-    { name: "Express", icon: <SiExpress className="text-gray-300 text-3xl" /> },
-    { name: "React", icon: <FaReact className="text-blue-400 text-3xl" /> },
-    { name: "Node.js", icon: <FaNodeJs className="text-green-400 text-3xl" /> },
-    { name: "JavaScript", icon: <DiJavascript className="text-yellow-400 text-3xl" /> },
-    { name: "HTML5", icon: <DiHtml5 className="text-orange-500 text-3xl" /> },
-    { name: "CSS3", icon: <DiCss3 className="text-blue-500 text-3xl" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400 text-3xl" /> },
-    { name: "Bootstrap", icon: <SiBootstrap className="text-purple-500 text-3xl" /> },
-    { name: "Java + DSA", icon: <FaJava className="text-red-500 text-3xl" /> },
-    { name: "Git/GitHub", icon: <SiGithub className="text-white text-3xl" /> },
+    { name: "Java", icon: <FaJava />, color: "text-red-500" },
+    { name: "HTML5", icon: <DiHtml5 />, color: "text-orange-500" },
+    { name: "CSS3", icon: <DiCss3 />, color: "text-blue-500" },
+    { name: "JavaScript", icon: <DiJavascript />, color: "text-yellow-400" },
+    { name: "Bootstrap", icon: <SiBootstrap />, color: "text-purple-500" },
+    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "text-cyan-400" },
+    { name: "React", icon: <FaReact />, color: "text-blue-400" },
+    { name: "Node.js", icon: <FaNodeJs />, color: "text-green-400" },
+    { name: "Express", icon: <SiExpress />, color: "text-gray-300" },
+    { name: "MongoDB", icon: <SiMongodb />, color: "text-green-500" },
+    { name: "GitHub", icon: <SiGithub />, color: "text-white" },
   ];
 
   const container = {
@@ -24,29 +24,38 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.3
       }
     }
   };
 
   const item = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { scale: 0, opacity: 0 },
     visible: {
-      y: 0,
-      opacity: 1
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }
     }
   };
 
   return (
-    <section id="skills" className="bg-gray-900 py-20 px-4">
+    <section id="skills" className="bg-gray-900 py-20 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
-          className="text-4xl font-bold text-white pb-4 border-b-2 border-amber-500 mb-12"
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          className="text-4xl font-bold text-white pb-4 mb-12 text-center relative"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Skills
+          <span className="relative inline-block">
+            Skills
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></span>
+          </span>
         </motion.h1>
 
         <motion.div
@@ -54,24 +63,41 @@ const Skills = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
+          className="flex flex-wrap justify-center gap-12 h-65 "
         >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               variants={item}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-800 p-6 rounded-xl flex flex-col items-center"
+              whileHover={{ 
+                scale: 1.1,
+                rotate: 5,
+                boxShadow: "0 0 25px rgba(245, 158, 11, 0.3)"
+              }}
+              className={`relative w-24 h-24 rounded-full flex items-center justify-center 
+                bg-gray-800 border-2 border-gray-700 cursor-default
+                transition-all duration-300 hover:border-amber-400 ${skill.color}`}
             >
-              <div className="mb-4">
+              <div className="text-3xl">
                 {skill.icon}
               </div>
-              <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
+              <div className="absolute -bottom-8 w-full text-center">
+                <span className="text-white text-sm font-medium">{skill.name}</span>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-       
+        <motion.div 
+          className="mt-20 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            I work with these technologies daily to build modern, responsive, and scalable web applications.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
