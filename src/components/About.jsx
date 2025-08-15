@@ -54,10 +54,10 @@ const About = () => {
             >
               <MdOutlineMail className="text-amber-500 text-2xl mr-2" />
               <a
-                href="mailto:realarunrai0752@gmail.com"
+                href="mailto:arunrai0752@gmail.com"
                 className="text-gray-300 hover:text-white transition-colors"
               >
-                realarunrai0752@gmail.com
+                arunrai0752@gmail.com
               </a>
             </motion.div>
 
