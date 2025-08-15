@@ -105,10 +105,10 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-medium text-white">Email</h3>
                   <a 
-                    href="mailto:realarunrai0752@gmail.com" 
+                    href="mailto:arunrai0752@gmail.com" 
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    realarunrai0752@gmail.com
+                    arunrai0752@gmail.com
                   </a>
                 </div>
               </motion.div>
