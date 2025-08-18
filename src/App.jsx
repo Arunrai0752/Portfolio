@@ -5,11 +5,13 @@ import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
       <Nav />
+      <Toaster />
 
       <section id="home">
         <Hero />
