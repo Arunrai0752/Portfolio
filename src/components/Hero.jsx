@@ -105,33 +105,11 @@ const Hero = () => {
             className="w-full h-full object-cover"
           />
           
-          {/* Floating tech badges around the image */}
-          <motion.div 
-            className="absolute -top-2 -right-2 bg-indigo-600 text-white p-2 rounded-full shadow-lg"
-            variants={techIconVariants}
-            custom={0}
-            whileHover="hover"
-          >
-            <SiReact size={20} />
-          </motion.div>
+        
           
-          <motion.div 
-            className="absolute -bottom-2 -left-2 bg-yellow-500 text-black p-2 rounded-full shadow-lg"
-            variants={techIconVariants}
-            custom={1}
-            whileHover="hover"
-          >
-            <SiJavascript size={20} />
-          </motion.div>
           
-          <motion.div 
-            className="absolute top-1/2 -right-6 bg-green-600 text-white p-2 rounded-full shadow-lg"
-            variants={techIconVariants}
-            custom={2}
-            whileHover="hover"
-          >
-            <SiNodedotjs size={20} />
-          </motion.div>
+          
+         
         </motion.div>
       </motion.div>
 
