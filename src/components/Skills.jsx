@@ -44,19 +44,18 @@ const Skills = () => {
   };
 
   return (
-  <section id="skills" className="bg-gray-900 py-20 px-4 overflow-x-hidden">
+    <section id="skills" className="relative flex flex-col md:flex-row justify-center items-center w-full min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 px-6 pt-24 md:pt-0 pb-12 overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
-        <motion.h1 
-          className="text-4xl font-bold text-white pb-4 mb-12 text-center relative"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        <motion.h1
+          className="text-4xl font-bold text-white pb-4 border-b-2 border-amber-500 mb-12"
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
         >
-          <span className="relative inline-block">
-            Skills
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></span>
-          </span>
+          Skills
         </motion.h1>
+
 
         <motion.div
           variants={container}
@@ -69,7 +68,7 @@ const Skills = () => {
             <motion.div
               key={index}
               variants={item}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
                 rotate: 5,
                 boxShadow: "0 0 25px rgba(245, 158, 11, 0.3)"
@@ -88,7 +87,7 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="mt-10 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -75,7 +75,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-gray-800 to-gray-900 py-20 px-4">
+
+    
+    <section id="contact" className=" bg-gradient-to-tr from-slate-900 via-slate-800 to-indigo-900  py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h1
           className="text-4xl font-bold text-white pb-4 border-b-2 border-amber-500 mb-12"

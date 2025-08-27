@@ -169,7 +169,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="bg-gray-900 py-20 px-4">
+    <section id="projects" className=" bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900   py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
           className="text-4xl font-bold text-white pb-4 border-b-2 border-amber-500 mb-12"

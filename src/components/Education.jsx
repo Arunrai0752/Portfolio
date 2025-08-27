@@ -74,11 +74,11 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="bg-gray-100 py-20 px-4">
+    <section id="education"       className=" bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900  py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Education Section */}
         <motion.h1 
-          className="text-4xl font-bold text-gray-800 pb-4 border-b-2 border-amber-500 mb-12"
+          className="text-4xl font-bold text-white pb-4 border-b-2 border-amber-500 mb-12"
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}

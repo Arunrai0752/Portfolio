@@ -25,7 +25,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-r from-gray-800 to-gray-900 py-20 px-4"
+      className="relative flex flex-col md:flex-row justify-center items-center w-full min-h-screen bg-gradient-to-tr from-slate-900 via-slate-800 to-indigo-900 px-6 pt-24 md:pt-0 pb-12 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <motion.h1
