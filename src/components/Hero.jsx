@@ -84,9 +84,8 @@ const Hero = () => {
     >
       
 
-      {/* Left Side - Image with Animation */}
       <motion.div
-        className="w-full md:w-2/5 flex justify-center items-center mb-12 md:mb-0 relative"
+        className="w-full md:w-[50%] flex justify-center items-center mb-12 md:mb-0 relative"
         initial="hidden"
         animate="visible"
         variants={container}
@@ -97,7 +96,6 @@ const Hero = () => {
           className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-indigo-500 bg-gradient-to-r from-indigo-600 to-purple-600 shadow-2xl"
           style={{ boxShadow: "0 0 50px rgba(99, 102, 241, 0.5)" }}
         >
-          {/* Profile Image */}
           <img 
             src={Arunimg} 
             alt="Arun Rai"
@@ -112,9 +110,13 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Right Side - Text Content */}
+
+
+
+
+
       <motion.div 
-        className="w-full md:w-3/5 text-center md:text-left z-10"
+        className="w-full md:w-[50%] text-center md:text-left z-10"
         initial="hidden"
         animate="visible"
         variants={container}
@@ -237,7 +239,7 @@ const Hero = () => {
       </motion.div>
 
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-indigo-300"
+        className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-indigo-300"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
