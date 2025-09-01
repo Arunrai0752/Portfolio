@@ -5,7 +5,6 @@ import { SiJavascript, SiReact, SiNodedotjs, SiMongodb, SiExpress } from "react-
 import Arunimg from "../assets/ArunImg.jpg";
 
 const Hero = () => {
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {
