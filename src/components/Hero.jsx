@@ -224,6 +224,8 @@ const Hero = () => {
           </motion.a>
           <motion.a
             href="Arun_FullStackDev _Resume.pdf"
+            download={"Arun_FullStackDev _Resume.pdf"}
+            
             className="px-8 py-3 bg-slate-800 text-white font-semibold rounded-lg text-center flex items-center justify-center gap-2"
             whileHover={{ 
               scale: 1.05,
