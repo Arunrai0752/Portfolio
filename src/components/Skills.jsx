@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaJava } from "react-icons/fa";
 import { 
-  SiMongodb, SiExpress, SiTypescript, SiTailwindcss, 
+  SiMongodb, SiExpress, SiTailwindcss, 
   SiBootstrap, SiGithub, SiFigma 
 } from "react-icons/si";
 import { DiJavascript, DiHtml5, DiCss3 } from "react-icons/di";
@@ -20,7 +20,7 @@ const Skills = () => {
     { name: "Express", icon: <SiExpress />, color: "text-gray-300" },
     { name: "MongoDB", icon: <SiMongodb />, color: "text-green-500" },
     { name: "GitHub", icon: <SiGithub />, color: "text-white" },
-    { name: "Figma", icon: <SiFigma />, color: "text-pink-500" }, 
+    { name: "Figma", icon: <SiFigma />, color: "text-pink-500" },
   ];
 
   const container = {
