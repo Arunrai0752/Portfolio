@@ -1,7 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaJava } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiTypescript, SiTailwindcss, SiBootstrap, SiGithub } from "react-icons/si";
+import { 
+  SiMongodb, SiExpress, SiTypescript, SiTailwindcss, 
+  SiBootstrap, SiGithub, SiFigma 
+} from "react-icons/si";
 import { DiJavascript, DiHtml5, DiCss3 } from "react-icons/di";
 
 const Skills = () => {
@@ -17,6 +20,7 @@ const Skills = () => {
     { name: "Express", icon: <SiExpress />, color: "text-gray-300" },
     { name: "MongoDB", icon: <SiMongodb />, color: "text-green-500" },
     { name: "GitHub", icon: <SiGithub />, color: "text-white" },
+    { name: "Figma", icon: <SiFigma />, color: "text-pink-500" }, 
   ];
 
   const container = {
@@ -44,7 +48,9 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="relative flex flex-col md:flex-row justify-center items-center w-full min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 px-6 pt-24 md:pt-0 pb-12 overflow-hidden"
+    <section
+      id="skills"
+      className="relative flex flex-col md:flex-row justify-center items-center w-full min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 px-6 pt-24 md:pt-0 pb-12 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <motion.h1
@@ -55,7 +61,6 @@ const Skills = () => {
         >
           Skills
         </motion.h1>
-
 
         <motion.div
           variants={container}
