@@ -46,17 +46,12 @@ const Hero = () => {
     }
   };
 
-
-
-
-
   return (
     <section
       id="home"
       className="relative flex flex-col md:flex-row justify-center items-center w-full min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 px-6 pt-24 md:pt-0 pb-12 overflow-hidden"
     >
 
-{/* Image Circle */}
       <motion.div
         className="w-full md:w-[50%] flex justify-center items-center mb-12 md:mb-0 relative"
         initial="hidden"
@@ -79,10 +74,6 @@ const Hero = () => {
       </motion.div>
 
 
-
-
-
-{/* Name ANd Profeccion */}
       <motion.div
         className="w-full md:w-[50%] text-center md:text-left z-10"
         initial="hidden"
@@ -206,7 +197,6 @@ const Hero = () => {
       </motion.div>
 
 
-{/* Scroll Button */}
       <motion.div
         className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-indigo-300"
         initial={{ opacity: 0 }}

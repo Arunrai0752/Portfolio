@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+
 
 const About = () => {
   const container = {
@@ -22,6 +23,7 @@ const About = () => {
     }
   };
 
+  
   return (
     <section
       id="about"

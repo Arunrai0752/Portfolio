@@ -14,7 +14,6 @@ const Nav = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
       
-      // Track active section
       const sections = document.querySelectorAll("section");
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
@@ -112,7 +111,6 @@ const Nav = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <motion.div
         initial={false}
         animate={isOpen ? "open" : "closed"}

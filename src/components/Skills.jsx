@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaJava } from "react-icons/fa";
-import { 
-  SiMongodb, SiExpress, SiTailwindcss, 
-  SiBootstrap, SiGithub, SiFigma 
-} from "react-icons/si";
+import { SiMongodb, SiExpress, SiTailwindcss, SiBootstrap, SiGithub, SiFigma } from "react-icons/si";
 import { DiJavascript, DiHtml5, DiCss3 } from "react-icons/di";
 
 const Skills = () => {
@@ -62,6 +59,7 @@ const Skills = () => {
           Skills
         </motion.h1>
 
+
         <motion.div
           variants={container}
           initial="hidden"
@@ -92,6 +90,7 @@ const Skills = () => {
           ))}
         </motion.div>
 
+
         <motion.div
           className="mt-10 text-center"
           initial={{ opacity: 0 }}
@@ -103,6 +102,8 @@ const Skills = () => {
           </p>
         </motion.div>
       </div>
+
+
     </section>
   );
 };

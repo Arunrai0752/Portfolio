@@ -5,12 +5,16 @@ import emailjs from 'emailjs-com';
 import toast from "react-hot-toast";
 
 const Contact = () => {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
+
+
   const [isSending, setIsSending] = useState(false);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,6 +23,8 @@ const Contact = () => {
       [name]: value
     }));
   };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,6 +62,8 @@ const Contact = () => {
     });
   };
 
+
+
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -66,6 +74,8 @@ const Contact = () => {
     }
   };
 
+
+
   const item = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -74,8 +84,8 @@ const Contact = () => {
     }
   };
 
-  return (
 
+  return (
     
     <section id="contact" className=" bg-gradient-to-tr from-slate-900 via-slate-800 to-indigo-900  py-20 px-4">
       <div className="max-w-6xl mx-auto">

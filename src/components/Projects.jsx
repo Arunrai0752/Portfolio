@@ -5,13 +5,11 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { motion, AnimatePresence } from "framer-motion";
 import { FiGithub, FiExternalLink, FiX } from "react-icons/fi";
-
-// Placeholder images - replace with your actual project screenshots
 import TwoSoulsImg from "../assets/Twosouls.png";
 import MediVaultImg from "../assets/MedVault.png";
 import StoreBooksImg from "../assets/BooksStore.png";
 import FurniImg from "../assets/Furni.png";
-import PortfolioImg from "../assets/PortFolio.png"; // Assuming this is your portfolio image
+import PortfolioImg from "../assets/PortFolio.png"; 
 import WeatherAppImg from "../assets/Weather.png";
 import FoodMartImg from "../assets/Foodmart.png";
 import TodoImg from "../assets/To-DoList.png";
@@ -140,15 +138,6 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.category === activeTab);
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
   const item = {
     hidden: { y: 20, opacity: 0 },
@@ -157,6 +146,8 @@ const Projects = () => {
       opacity: 1
     }
   };
+
+
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -167,6 +158,9 @@ const Projects = () => {
     },
     exit: { opacity: 0, scale: 0.8 }
   };
+
+
+
 
   return (
     <section id="projects" className=" bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900   py-20 px-4">
@@ -352,6 +346,8 @@ const Projects = () => {
             </div>
           )}
         </AnimatePresence>
+
+        
       </div>
     </section>
   );
