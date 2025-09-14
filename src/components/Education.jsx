@@ -106,7 +106,6 @@ const Education = () => {
               whileHover={{
                 y: -10,
                 scale: 1.02,
-                boxShadow: "0 25px 50px -12px rgba(99, 102, 241, 0.5), 0 0 0 1px rgba(99, 102, 241, 0.3)",
                 transition: { duration: 0.3 }
               }}
               className="relative group"
