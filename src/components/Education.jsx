@@ -10,7 +10,6 @@ const Education = () => {
       field: "Electronics and Communication",
       score: "CGPA: 8.35",
       year: "2020 - 2024",
-      // icon:  className="text-4xl text-amber-400" />,
       gradient: "from-blue-500 to-purple-600"
     },
     {
@@ -112,7 +111,7 @@ const Education = () => {
               }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-amber-500/30 to-orange-500/30 rounded-full blur-lg group-hover:blur-xl group-hover:scale-150 transition-all duration-300 opacity-0 group-hover:opacity-100" />
               <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 shadow-2xl hover:shadow-amber-500/10 transition-all duration-300">
                 <div className="flex items-center justify-between mb-6">
                   <div className={`p-3 rounded-xl bg-gradient-to-r ${edu.gradient} shadow-lg`}>
