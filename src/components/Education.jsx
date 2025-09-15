@@ -84,7 +84,7 @@ const Education = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text ">
             Education
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -97,7 +97,7 @@ const Education = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 z-10"
         >
           {educationData.map((edu, index) => (
             <motion.div
@@ -155,35 +155,6 @@ const Education = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-20 text-center"
-        >
-          <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-            <h2 className="text-3xl font-bold text-white mb-4">Continuous Learning</h2>
-            <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-              Beyond formal education, I continuously expand my knowledge through online courses,
-              workshops, and staying updated with the latest technologies in software development.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white text-sm font-medium">
-                React & Next.js
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-green-500 to-teal-600 rounded-full text-white text-sm font-medium">
-                Node.js & Express
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-full text-white text-sm font-medium">
-                Cloud & DevOps
-              </span>
-              <span className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full text-white text-sm font-medium">
-                UI/UX Design
-              </span>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

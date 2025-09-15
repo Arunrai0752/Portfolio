@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -190,6 +190,15 @@ const Projects = () => {
     }
   };
 
+
+  useEffect(() => {
+  if (selectedProject) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+}, [selectedProject]);
+
   return (
     <section id="projects" className="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 py-20 px-4 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
@@ -370,7 +379,7 @@ const Projects = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm  flex items-center justify-center p-4 z-[9999]"
               onClick={() => setSelectedProject(null)}
             >
               <motion.div
@@ -378,15 +387,25 @@ const Projects = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-gray-700/50"
+        className="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-gray-700/50 relative z-[10000]"
                 onClick={(e) => e.stopPropagation()}
               >
+                <div className="absolute inset-0 overflow-hidden">
+                  <motion.div
+                    className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 rounded-full blur-2xl"
+                    animate={floatingAnimation}
+                  />
+                  <motion.div
+                    className="absolute bottom-20 right-10 w-60 h-60 bg-gradient-to-r from-amber-500/10 to-pink-500/10 rounded-full blur-2xl"
+                    animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}
+                  />
+                </div>
                 <div className="relative">
                   <motion.button
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setSelectedProject(null)}
-                    className="absolute top-6 right-6 bg-gray-800/80 backdrop-blur-sm rounded-full p-3 z-10 hover:bg-amber-500 transition-all duration-300 shadow-lg"
+                    className="absolute top-6 right-6 bg-slate-900/80 backdrop-blur-sm rounded-full p-3 z-[10001] hover:bg-amber-500 transition-all duration-300 shadow-lg"
                   >
                     <FiX className="text-white text-xl" />
                   </motion.button>
@@ -400,7 +419,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="p-8">
+                <div className="p-8 bg-white/5 backdrop-blur-sm">
                   <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -433,7 +452,7 @@ const Projects = () => {
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 0.5 + i * 0.1 }}
-                          className="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full text-sm text-white border border-gray-600 hover:border-amber-500 transition-colors"
+                          className="px-4 py-2 bg-gradient-to-r from-slate-700 to-slate-600 rounded-full text-sm text-white border border-gray-600 hover:border-amber-500 transition-colors"
                         >
                           {tech}
                         </motion.span>
@@ -453,7 +472,7 @@ const Projects = () => {
                       href={selectedProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-600 rounded-xl text-white hover:from-gray-600 hover:to-gray-500 transition-all duration-300 shadow-lg"
+                      className="flex items-center px-6 py-3 bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl text-white hover:from-slate-600 hover:to-slate-500 transition-all duration-300 shadow-lg"
                     >
                       <FiGithub className="mr-3 text-lg" /> View Code
                     </motion.a>
