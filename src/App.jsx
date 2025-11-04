@@ -13,7 +13,7 @@ function App() {
       <Nav />
       <Toaster />
 
-      <section id="home">
+      <section >
         <Hero />
       </section>
 

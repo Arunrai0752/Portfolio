@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiX, FiCode, FiEye } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiX } from "react-icons/fi";
 import TwoSoulsImg from "../assets/Twosouls.png";
 import MediVaultImg from "../assets/MedVault.png";
 import StoreBooksImg from "../assets/BooksStore.png";
@@ -27,7 +27,6 @@ const Projects = () => {
       description: "Comprehensive event management system handling weddings, birthdays, engagements with hall booking, catering, decoration, music, and makeup services",
       tech: ["React", "Node.js", "MongoDB", "Express", "JWT Auth"],
       category: "fullstack",
-      bg: "from-purple-600 to-purple-800",
       github: "https://github.com/Arunrai0752/Events-Planner",
       live: "#",
       image: TwoSoulsImg
@@ -37,7 +36,6 @@ const Projects = () => {
       description: "Healthcare platform connecting doctors and patients with medical records, prescriptions, appointment scheduling, and reminders via email/SMS",
       tech: ["MERN Stack", "Nodemailer"],
       category: "fullstack",
-      bg: "from-teal-600 to-teal-800",
       github: "https://github.com/Arunrai0752/MediVault",
       live: "#",
       image: MediVaultImg
@@ -47,7 +45,6 @@ const Projects = () => {
       description: "Online marketplace for buying and selling books where users can upload, modify prices, and manage their book listings",
       tech: ["React", "Node.js", "MongoDB", "Cloudinary"],
       category: "fullstack",
-      bg: "from-amber-600 to-amber-800",
       github: "https://github.com/Arunrai0752/React-Projects/tree/main/BooksStore",
       live: "#",
       image: StoreBooksImg
@@ -57,7 +54,6 @@ const Projects = () => {
       description: "E-commerce solution for furniture with cart functionality and payment integration",
       tech: ["HTML", "CSS", "Bootstrap"],
       category: "frontend",
-      bg: "from-orange-600 to-orange-800",
       github: "https://github.com/Arunrai0752/Furni",
       live: "#",
       image: FurniImg
@@ -67,7 +63,6 @@ const Projects = () => {
       description: "Interactive personal portfolio showcasing skills, projects and contact information",
       tech: ["React", "Framer Motion", "Tailwind CSS"],
       category: "frontend",
-      bg: "from-blue-600 to-blue-800",
       github: "https://github.com/Arunrai0752/Portfolio",
       live: "#",
       image: PortfolioImg
@@ -77,7 +72,6 @@ const Projects = () => {
       description: "Real-time weather application with 5-day forecast using OpenWeather API",
       tech: ["HTML", "CSS", "API Integration"],
       category: "frontend",
-      bg: "from-red-600 to-red-800",
       github: "https://github.com/Arunrai0752/WeatherApp",
       live: "#",
       image: WeatherAppImg
@@ -87,7 +81,6 @@ const Projects = () => {
       description: "Food delivery app clone with restaurant listings and menu browsing",
       tech: ["HTML", "CSS", "Bootstrap"],
       category: "frontend",
-      bg: "from-green-600 to-green-800",
       github: "https://github.com/Arunrai0752/FoodMart",
       live: "#",
       image: FoodMartImg
@@ -97,7 +90,6 @@ const Projects = () => {
       description: "Task management application with CRUD operations and local storage",
       tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       category: "frontend",
-      bg: "from-indigo-600 to-indigo-800",
       github: "https://github.com/Arunrai0752/To_Do_List-",
       live: "#",
       image: TodoImg
@@ -107,7 +99,6 @@ const Projects = () => {
       description: "Real-time currency conversion tool using exchange rate API",
       tech: ["HTML", "CSS", "JavaScript", "API Integration", "Bootstrap"],
       category: "frontend",
-      bg: "from-pink-600 to-pink-800",
       github: "https://github.com/Arunrai0752/Currency_Converter_ArunXrai",
       live: "#",
       image: CurrencyImg
@@ -117,7 +108,6 @@ const Projects = () => {
       description: "Application that fetches and displays random jokes from an API",
       tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "API Integration"],
       category: "frontend",
-      bg: "from-yellow-600 to-yellow-800",
       github: "https://github.com/Arunrai0752/Joke_api",
       live: "#",
       image: JokeImg
@@ -127,115 +117,52 @@ const Projects = () => {
       description: "Interactive calculator with basic arithmetic operations",
       tech: ["HTML", "CSS", "JavaScript"],
       category: "frontend",
-      bg: "from-gray-600 to-gray-800",
       github: "https://github.com/Arunrai0752/CalculaterArunXRai",
       live: "#",
       image: CalculatorImg
-    },
+    }
   ];
 
-  const filteredProjects = activeTab === "all"
-    ? projects
-    : projects.filter(project => project.category === activeTab);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99]
-      }
-    }
-  };
-
-  const modalVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { type: "spring", damping: 25, stiffness: 300 }
-    },
-    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.3 } }
-  };
-
-  const floatingAnimation = {
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
-
-  const cardFloatingAnimation = {
-    y: [0, -5, 0],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 0.5
-    }
-  };
-
+  const filteredProjects = activeTab === "all" ? projects : projects.filter(p => p.category === activeTab);
 
   useEffect(() => {
-  if (selectedProject) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'auto';
-  }
-}, [selectedProject]);
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => { document.body.style.overflow = 'auto'; };
+  }, [selectedProject]);
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
 
   return (
-    <section id="projects" className="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 py-20 px-4 overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
+    <section id="projects" className="relative min-h-screen py-24 px-6 bg-zinc-950">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-full blur-3xl"
-          animate={floatingAnimation}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-amber-500/10 to-pink-500/10 rounded-full blur-3xl"
-          animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-indigo-600/5 to-cyan-600/5 rounded-full blur-3xl"
-          animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 2 } }}
-        />
-      </div>
-      <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-7xl font-bold text-zinc-100 mb-6 tracking-tight">
             My Projects
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
             A showcase of my creative work and technical expertise
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="initial"
+          whileInView="whileInView"
           viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
           className="flex flex-wrap justify-center gap-4 mb-16"
         >
           {["all", "fullstack", "frontend"].map((tab) => (
@@ -244,92 +171,91 @@ const Projects = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(tab)}
-              className={`px-8 py-3 rounded-full capitalize font-medium transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeTab === tab
-                  ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/25"
-                  : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 backdrop-blur-sm border border-gray-600"
+                  ? 'bg-emerald-400 text-zinc-950 shadow-lg shadow-emerald-400/25'
+                  : 'bg-zinc-900/50 text-zinc-400 hover:bg-zinc-800/50 border border-zinc-700 hover:border-zinc-600'
               }`}
             >
-              {tab}
+              {tab === 'all' ? 'All' : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </motion.button>
           ))}
         </motion.div>
 
         <Swiper
           modules={[Navigation]}
-          navigation
-          spaceBetween={50}
+          navigation={{
+            nextEl: '.custom-swiper-next',
+            prevEl: '.custom-swiper-prev',
+          }}
+          spaceBetween={32}
           slidesPerView={1}
           breakpoints={{
-            640: { slidesPerView: 2 },
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
             1024: { slidesPerView: 2 },
             1280: { slidesPerView: 3 }
           }}
-          className="pb-16 custom-swiper-nav"
+          className="pb-20"
         >
-          {filteredProjects.map((project, index) => (
-            <SwiperSlide key={index}>
+          {filteredProjects.map((project, i) => (
+            <SwiperSlide key={i}>
               <motion.div
-                variants={itemVariants}
-                animate={cardFloatingAnimation}
-                whileHover={{
-                  y: -20,
-                  scale: 1.03,
-                  boxShadow: "0 35px 60px -12px rgba(99, 102, 241, 0.6), 0 0 0 2px rgba(245, 158, 66, 0.4)",
-                  transition: { duration: 0.4, ease: "easeOut" }
-                }}
-                className="bg-gradient-to-br from-gray-800 via-gray-850 to-gray-900 rounded-3xl overflow-hidden shadow-2xl cursor-pointer group border border-gray-700/60 backdrop-blur-sm"
+                variants={fadeInUp}
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="group relative rounded-3xl overflow-hidden bg-zinc-900/50 border border-zinc-800 backdrop-blur-sm cursor-pointer shadow-xl hover:shadow-2xl hover:border-emerald-400 transition-all duration-500"
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex gap-2">
-                      <motion.button
+                  <div className="absolute inset-0 bg-zinc-950/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex gap-3">
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      onClick={(e) => e.stopPropagation()}
+                      className="p-3 bg-zinc-800/80 backdrop-blur-sm rounded-xl text-zinc-300 hover:bg-emerald-400 hover:text-zinc-950 transition-all"
+                    >
+                      <FiGithub className="w-5 h-5" />
+                    </motion.a>
+                    {project.live !== "#" && (
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
-                        className="p-2 bg-amber-500 rounded-full text-white shadow-lg"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open(project.github, '_blank');
-                        }}
+                        onClick={(e) => e.stopPropagation()}
+                        className="p-3 bg-zinc-800/80 backdrop-blur-sm rounded-xl text-zinc-300 hover:bg-sky-400 hover:text-zinc-950 transition-all"
                       >
-                        <FiCode className="text-sm" />
-                      </motion.button>
-                      {project.live !== "#" && (
-                        <motion.button
-                          whileHover={{ scale: 1.1 }}
-                          className="p-2 bg-blue-500 rounded-full text-white shadow-lg"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.open(project.live, '_blank');
-                          }}
-                        >
-                          <FiEye className="text-sm" />
-                        </motion.button>
-                      )}
-                    </div>
+                        <FiExternalLink className="w-5 h-5" />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+                  <h3 className="text-xl font-bold text-zinc-100 mb-3 group-hover:text-emerald-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                  <p className="text-zinc-400 text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.slice(0, 3).map((tech, i) => (
-                      <span key={i} className="px-3 py-1 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full text-xs text-gray-300 border border-gray-600">
+                    {project.tech.slice(0, 3).map((tech, j) => (
+                      <span
+                        key={j}
+                        className="px-3 py-1 bg-zinc-800/50 rounded-full text-xs text-zinc-300 border border-zinc-700"
+                      >
                         {tech}
                       </span>
                     ))}
                     {project.tech.length > 3 && (
-                      <span className="px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full text-xs text-white">
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-400 rounded-full text-xs font-medium border border-emerald-400/30">
                         +{project.tech.length - 3}
                       </span>
                     )}
@@ -340,38 +266,19 @@ const Projects = () => {
           ))}
         </Swiper>
 
-        <style>{`
-          .custom-swiper-nav .swiper-button-next,
-          .custom-swiper-nav .swiper-button-prev {
-            color: #f59e42;
-            background: rgba(30, 41, 59, 0.95);
-            border-radius: 50%;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            border: 2px solid #f59e42;
-            transition: all 0.3s ease;
-            z-index: 10;
-            backdrop-filter: blur(10px);
-          }
-          .custom-swiper-nav .swiper-button-next:hover,
-          .custom-swiper-nav .swiper-button-prev:hover {
-            background: linear-gradient(135deg, #f59e42, #fb923c);
-            color: #fff;
-            transform: scale(1.1);
-            border-color: #fff;
-            box-shadow: 0 0 20px rgba(245, 158, 66, 0.5), 0 8px 32px rgba(0,0,0,0.3);
-          }
-          .custom-swiper-nav .swiper-button-next:after,
-          .custom-swiper-nav .swiper-button-prev:after {
-            font-size: 1.6rem;
-            font-weight: bold;
-          }
-        `}</style>
+        {/* Custom Navigation Buttons */}
+        <div className="flex justify-center gap-4 mt-8">
+          <button className="custom-swiper-prev p-4 bg-zinc-800/50 backdrop-blur-sm rounded-full border border-zinc-700 text-zinc-400 hover:bg-emerald-400 hover:text-zinc-950 hover:border-emerald-400 transition-all duration-300 shadow-lg">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button className="custom-swiper-next p-4 bg-zinc-800/50 backdrop-blur-sm rounded-full border border-zinc-700 text-zinc-400 hover:bg-emerald-400 hover:text-zinc-950 hover:border-emerald-400 transition-all duration-300 shadow-lg">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
 
         <AnimatePresence>
           {selectedProject && (
@@ -379,116 +286,78 @@ const Projects = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm  flex items-center justify-center p-4 z-[9999]"
+              className="fixed inset-0 bg-zinc-950/90 backdrop-blur-xl flex items-center justify-center p-4 z-[9999]"
               onClick={() => setSelectedProject(null)}
             >
               <motion.div
-                variants={modalVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-        className="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-gray-700/50 relative z-[10000]"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: 'spring', damping: 25 }}
+                className="bg-zinc-900/95 backdrop-blur-xl rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-auto border border-zinc-800 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="absolute inset-0 overflow-hidden">
-                  <motion.div
-                    className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 rounded-full blur-2xl"
-                    animate={floatingAnimation}
-                  />
-                  <motion.div
-                    className="absolute bottom-20 right-10 w-60 h-60 bg-gradient-to-r from-amber-500/10 to-pink-500/10 rounded-full blur-2xl"
-                    animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-6 right-6 p-3 bg-zinc-800/50 backdrop-blur-sm rounded-2xl border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-600 transition-all z-10"
+                >
+                  <FiX className="w-5 h-5 text-zinc-300" />
+                </motion.button>
+
+                <div className="h-64 md:h-80 lg:h-96 overflow-hidden mb-6">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="relative">
-                  <motion.button
-                    whileHover={{ scale: 1.1, rotate: 90 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => setSelectedProject(null)}
-                    className="absolute top-6 right-6 bg-slate-900/80 backdrop-blur-sm rounded-full p-3 z-[10001] hover:bg-amber-500 transition-all duration-300 shadow-lg"
-                  >
-                    <FiX className="text-white text-xl" />
-                  </motion.button>
 
-                  <div className="h-80 md:h-96 overflow-hidden">
-                    <img
-                      src={selectedProject.image}
-                      alt={selectedProject.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                <div className="p-8 bg-white/5 backdrop-blur-sm">
-                  <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-3xl md:text-4xl font-bold text-white mb-4"
-                  >
+                <div className="p-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-4">
                     {selectedProject.title}
-                  </motion.h2>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-gray-300 mb-8 text-lg leading-relaxed"
-                  >
+                  </h2>
+                  <p className="text-zinc-400 mb-8 text-lg leading-relaxed">
                     {selectedProject.description}
-                  </motion.p>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="mb-8"
-                  >
-                    <h3 className="text-xl font-semibold text-white mb-4">Technologies Used</h3>
+                  </p>
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-zinc-100 mb-4">Technologies Used</h3>
                     <div className="flex flex-wrap gap-3">
                       {selectedProject.tech.map((tech, i) => (
-                        <motion.span
+                        <span
                           key={i}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.5 + i * 0.1 }}
-                          className="px-4 py-2 bg-gradient-to-r from-slate-700 to-slate-600 rounded-full text-sm text-white border border-gray-600 hover:border-amber-500 transition-colors"
+                          className="px-4 py-2 bg-zinc-800/50 rounded-xl text-sm text-zinc-300 border border-zinc-700 hover:bg-emerald-400/20 hover:text-emerald-400 hover:border-emerald-400/30 transition-all"
                         >
                           {tech}
-                        </motion.span>
+                        </span>
                       ))}
                     </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="flex flex-wrap gap-4"
-                  >
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <motion.a
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
                       href={selectedProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-6 py-3 bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl text-white hover:from-slate-600 hover:to-slate-500 transition-all duration-300 shadow-lg"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="flex items-center justify-center px-6 py-4 bg-zinc-800 text-zinc-100 font-semibold rounded-2xl border border-zinc-700 hover:bg-emerald-400 hover:text-zinc-950 hover:border-emerald-400 transition-all shadow-lg"
                     >
-                      <FiGithub className="mr-3 text-lg" /> View Code
+                      <FiGithub className="mr-2 w-5 h-5" />
+                      View Code
                     </motion.a>
                     {selectedProject.live !== "#" && (
                       <motion.a
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
                         href={selectedProject.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl text-white hover:from-amber-600 hover:to-orange-600 transition-all duration-300 shadow-lg shadow-amber-500/25"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="flex items-center justify-center px-6 py-4 bg-zinc-800 text-zinc-100 font-semibold rounded-2xl border border-zinc-700 hover:bg-sky-400 hover:text-zinc-950 hover:border-sky-400 transition-all shadow-lg"
                       >
-                        <FiExternalLink className="mr-3 text-lg" /> Live Demo
+                        <FiExternalLink className="mr-2 w-5 h-5" />
+                        Live Demo
                       </motion.a>
                     )}
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
