@@ -4,8 +4,8 @@ import ArunImg from "../assets/ArunImg.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-white dark:from-blue-950/10 dark:to-neutral-950 pointer-events-none" />
+    <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-to-b from-white via-neutral-50 to-white dark:from-black dark:via-neutral-950 dark:to-black overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

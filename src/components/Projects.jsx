@@ -128,7 +128,7 @@ export default function Projects() {
     const animate = () => {
       if (container && !isPaused && !isDragging) {
         container.scrollLeft += scrollSpeed;
-        
+
         // Reset to start when reaching the end for infinite loop effect
         if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
           container.scrollLeft = 0;
@@ -184,7 +184,8 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 px-6 bg-neutral-50 dark:bg-neutral-900/50 overflow-hidden">
+    <section id="projects" className="relative py-28 px-6 bg-gradient-to-b from-white via-neutral-50 to-white dark:from-black dark:via-neutral-950 dark:to-black overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -206,11 +207,10 @@ export default function Projects() {
             <button
               key={t}
               onClick={() => setTab(t)}
-              className={`px-5 py-2.5 rounded-xl text-sm font-semibold capitalize transition-all ${
-                tab === t
+              className={`px-5 py-2.5 rounded-xl text-sm font-semibold capitalize transition-all ${tab === t
                   ? "bg-blue-600 text-white shadow-md"
                   : "bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-700 hover:border-blue-300"
-              }`}
+                }`}
             >
               {t}
             </button>
@@ -280,7 +280,7 @@ export default function Projects() {
                   draggable="false"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 {/* Category Badge */}
                 <div className="absolute top-3 right-3">
                   <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/90 dark:bg-neutral-900/90 text-blue-600 dark:text-blue-400 capitalize backdrop-blur-sm">

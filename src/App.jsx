@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
-// const Experience = lazy(() => import('./components/Experience'));
+const Experience = lazy(() => import('./components/Experience'));
 const Projects = lazy(() => import('./components/Projects'));
 const Education = lazy(() => import('./components/Education'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -22,7 +22,7 @@ function App() {
         <Suspense fallback={<div className="h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" /></div>}>
           <About />
           <Skills />
-          {/* <Experience /> */}
+          <Experience />
           <Projects />
           <Education />
           <Contact />

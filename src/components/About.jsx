@@ -10,7 +10,9 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about"       className="relative py-28 px-6 bg-gradient-to-b from-white via-neutral-50 to-white dark:from-black dark:via-neutral-950 dark:to-black overflow-hidden"
+ 
+ >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

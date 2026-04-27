@@ -22,7 +22,8 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 bg-neutral-50 dark:bg-neutral-900/50">
+    <section id="skills"       className="relative py-28 px-6 bg-gradient-to-b from-white via-neutral-50 to-white dark:from-black dark:via-neutral-950 dark:to-black overflow-hidden"
+ >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
