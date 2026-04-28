@@ -1,115 +1,169 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX, FiGithub, FiLinkedin } from "react-icons/fi";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiMenu, FiX } from 'react-icons/fi';
 
-const links = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "education", label: "Education" },
-  { id: "contact", label: "Contact" },
+const navItems = [
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Education' },
+  { id: 'contact', label: 'Contact' },
 ];
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
+export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("");
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-      const sections = document.querySelectorAll("section[id]");
-      sections.forEach((s) => {
-        const top = s.offsetTop - 150;
-        if (window.scrollY >= top && window.scrollY < top + s.offsetHeight) {
-          setActive(s.id);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 120 && rect.bottom >= 120) {
+          setActiveSection(section.id);
         }
       });
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-200 dark:border-neutral-800 shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold tracking-tight">
-          Arun<span className="text-blue-600">.</span>
-        </a>
+    <>
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? 'bg-slate-950/90 backdrop-blur-2xl border-b border-slate-800/80 py-3'
+            : 'bg-transparent py-5'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
-        <div className="hidden md:flex items-center gap-1">
-          {links.map((l) => (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                active === l.id
-                  ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20"
-                  : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
-              }`}
+          {/* Logo */}
+          <motion.button
+            onClick={() => scrollTo('home')}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="font-display text-2xl font-extrabold tracking-tight"
+          >
+            <span className="text-cyan-400">&lt;</span>
+            <span className="text-slate-100">Arun</span>
+            <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Rai</span>
+            <span className="text-cyan-400">/&gt;</span>
+          </motion.button>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item, i) => (
+              <motion.button
+                key={item.id}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + i * 0.05 }}
+                onClick={() => scrollTo(item.id)}
+                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group ${
+                  activeSection === item.id
+                    ? 'text-cyan-400'
+                    : 'text-slate-400 hover:text-slate-100'
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-gradient-to-r from-cyan-400 to-violet-400 transition-all duration-300 ${
+                    activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </motion.button>
+            ))}
+
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4 }}
+              whileHover={{ scale: 1.05, y: -1 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => scrollTo('contact')}
+              className="relative px-5 py-2 rounded-lg font-semibold text-sm text-slate-950 overflow-hidden group"
+              style={{ background: 'linear-gradient(135deg, #22d3ee, #8b5cf6)' }}
             >
-              {l.label}
-            </a>
-          ))}
-        </div>
+              <span className="relative z-10">Hire Me</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-violet-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.button>
+          </div>
 
-        <div className="hidden md:flex items-center gap-2">
-          <a
-            href="https://github.com/Arunrai0752"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-lg text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
+          {/* Mobile Toggle */}
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all duration-200"
           >
-            <FiGithub className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/arun-fullstack/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-lg text-neutral-500 hover:text-blue-600 transition-colors"
-          >
-            <FiLinkedin className="w-5 h-5" />
-          </a>
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                  <FiX size={22} />
+                </motion.div>
+              ) : (
+                <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
+                  <FiMenu size={22} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.button>
         </div>
+      </motion.nav>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-lg text-neutral-700 dark:text-neutral-300"
-        >
-          {open ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
-        </button>
-      </div>
-
+      {/* Mobile Drawer */}
       <AnimatePresence>
-        {open && (
+        {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-neutral-950 border-t dark:border-neutral-800"
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed top-[56px] left-0 right-0 z-40 bg-slate-950/98 backdrop-blur-2xl border-b border-slate-800 md:hidden overflow-hidden"
           >
-            <div className="px-6 py-4 space-y-2">
-              {links.map((l) => (
-                <a
-                  key={l.id}
-                  href={`#${l.id}`}
-                  onClick={() => setOpen(false)}
-                  className="block px-4 py-3 rounded-lg text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+            <div className="px-6 py-4 flex flex-col gap-1">
+              {navItems.map((item, i) => (
+                <motion.button
+                  key={item.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  onClick={() => scrollTo(item.id)}
+                  className={`text-left px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+                    activeSection === item.id
+                      ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/20'
+                      : 'text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60'
+                  }`}
                 >
-                  {l.label}
-                </a>
+                  {item.label}
+                </motion.button>
               ))}
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                onClick={() => scrollTo('contact')}
+                className="mt-3 px-4 py-3 rounded-xl font-semibold text-base text-slate-950"
+                style={{ background: 'linear-gradient(135deg, #22d3ee, #8b5cf6)' }}
+              >
+                Hire Me
+              </motion.button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }
