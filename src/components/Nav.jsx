@@ -150,16 +150,7 @@ export default function Nav() {
                   {item.label}
                 </motion.button>
               ))}
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                onClick={() => scrollTo('contact')}
-                className="mt-3 px-4 py-3 rounded-xl font-semibold text-base text-slate-950"
-                style={{ background: 'linear-gradient(135deg, #22d3ee, #8b5cf6)' }}
-              >
-                Hire Me
-              </motion.button>
+            
             </div>
           </motion.div>
         )}
