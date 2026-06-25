@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Nav';
-import Hero from './components/Hero';
+const Hero = lazy(() => import('./components/Hero'));
 import Footer from './components/Footer';
 
 const About = lazy(() => import('./components/About'));
@@ -18,7 +18,9 @@ function App() {
       <Navbar />
 
       <main>
-        <Hero />
+        <Suspense fallback={<div className="h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" /></div>}>
+          <Hero />
+        </Suspense>
         <Suspense fallback={<div className="h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" /></div>}>
           <About />
           <Skills />

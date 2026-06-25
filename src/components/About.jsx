@@ -1,9 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaRocket, FaBolt, FaCode, FaLayerGroup } from 'react-icons/fa';
 import Arunimg from '../assets/ArunImg.jpg';
-
-
 
 const containerVariant = {
   hidden: {},
@@ -20,7 +17,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="about" className="relative py-28 px-6 overflow-hidden">
+    <section id="about" className="relative pt-20 px-6 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.05),transparent_70%)]" />
 
       <div className="max-w-7xl mx-auto" ref={ref}>
@@ -58,6 +55,8 @@ export default function About() {
               <img
                 src={Arunimg}
                 alt="Arun Rai"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
@@ -91,10 +90,7 @@ export default function About() {
                 <span className="text-amber-400 font-semibold">Contract Full Stack Developer</span>,
                 I deliver production-ready solutions from intuitive user interfaces to robust backend systems.
               </p>
-              <p>
-                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
-                or sharing knowledge with the developer community. I'm always excited to take on new challenges.
-              </p>
+              
             </motion.div>
 
           

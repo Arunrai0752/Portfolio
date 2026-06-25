@@ -146,7 +146,7 @@ export default function Projects() {
                   <div className="relative h-52 overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
                       style={{ background: `linear-gradient(90deg, ${project.accent}, transparent)` }} />
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
                     <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 text-slate-300 text-xs uppercase tracking-wide">
                       {project.category === 'fullstack' ? 'Full Stack' : 'Frontend'}
