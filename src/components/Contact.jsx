@@ -39,7 +39,7 @@ export default function Contact() {
           <span className="text-violet-400 text-sm font-mono tracking-widest uppercase">Get In Touch</span>
         </motion.div>
 
-        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }} className="font-display text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 }} className="font-display text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
           <span className="text-slate-50">Let's Build</span><br />
           <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Something Great</span>
         </motion.h2>

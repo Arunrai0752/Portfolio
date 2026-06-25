@@ -86,7 +86,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="font-display text-5xl md:text-6xl font-extrabold tracking-tight mb-4"
+          className="font-display text-4xl md:text-6xl font-extrabold tracking-tight mb-4"
         >
           <span className="text-slate-50">Tech</span>{' '}
           <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">Skills</span>

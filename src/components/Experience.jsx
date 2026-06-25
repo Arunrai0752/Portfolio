@@ -63,7 +63,7 @@ export default function Experience() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="font-display text-5xl md:text-6xl font-extrabold tracking-tight mb-16"
+          className="font-display text-4xl md:text-6xl font-extrabold tracking-tight mb-16"
         >
           <span className="text-slate-50">Professional</span>
           <br />

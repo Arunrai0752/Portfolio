@@ -49,8 +49,6 @@ export default function Nav() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-
-          {/* Logo */}
           <motion.button
             onClick={() => scrollTo('home')}
             whileHover={{ scale: 1.04 }}
@@ -63,7 +61,6 @@ export default function Nav() {
             <span className="text-cyan-400">/&gt;</span>
           </motion.button>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, i) => (
               <motion.button
@@ -86,11 +83,8 @@ export default function Nav() {
                 />
               </motion.button>
             ))}
-
-           
           </div>
 
-          {/* Mobile Toggle */}
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
@@ -111,7 +105,6 @@ export default function Nav() {
         </div>
       </motion.nav>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -138,7 +131,6 @@ export default function Nav() {
                   {item.label}
                 </motion.button>
               ))}
-            
             </div>
           </motion.div>
         )}
