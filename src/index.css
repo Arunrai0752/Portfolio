@@ -1,8 +1,7 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-@theme {
-  --font-sans: 'Inter', sans-serif;
+:root {
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   --color-accent: #2563eb;
   --color-accent-light: #3b82f6;
   --color-accent-dark: #1d4ed8;
@@ -14,7 +13,7 @@
     scroll-behavior: smooth;
   }
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-sans);
     background-color: #020617;
     color: #f8fafc;
     overflow-x: hidden;
@@ -31,6 +30,16 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #22d3ee80;
+  }
+}
+
+/* Respect users who prefer reduced motion and provide a safe fallback on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
